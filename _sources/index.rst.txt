@@ -9,5 +9,6 @@ Merlintechs Docs
 .. toctree::
    :maxdepth: 1
    :caption: Documentation Links:
+
    troubleshooting/index.rst
 
