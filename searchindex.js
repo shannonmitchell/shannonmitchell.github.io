@@ -1,1 +1,1 @@
-Search.setIndex({docnames:["index"],envversion:52,filenames:["index.rst"],objects:{},objnames:{},objtypes:{},terms:{index:0,modul:0,page:0,search:0},titles:["Welcome to Merlintechs\u2019s documentation!"],titleterms:{document:0,indic:0,merlintech:0,tabl:0,welcom:0}})
+Search.setIndex({docnames:["index","troubleshooting/index"],envversion:52,filenames:["index.rst","troubleshooting/index.rst"],objects:{},objnames:{},objtypes:{},terms:{},titles:["Merlintechs Docs","Test Doc"],titleterms:{doc:[0,1],header:1,merlintech:0,subhead:1,test:1,thi:1}})
