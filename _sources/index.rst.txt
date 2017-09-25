@@ -13,6 +13,6 @@ probably be a work in progress for quite a while.
    :maxdepth: 1
    :caption: Documentation Links:
 
+   generaldocs/creating_github_sites_page.rst
    linuxdocs/index.rst
    openstackdocs/index.rst
-

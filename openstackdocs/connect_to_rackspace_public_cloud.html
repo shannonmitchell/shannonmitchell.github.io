@@ -1,0 +1,234 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Connect To Rackspace Public Cloud &#8212; MerlinTechs</title>
+    <link rel="stylesheet" href="../_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Openstack Related Documentation" href="index.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="index.html" title="Openstack Related Documentation"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MerlinTechs</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Openstack Related Documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/monkey_logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Connect To Rackspace Public Cloud</a><ul>
+<li><a class="reference internal" href="#set-up-your-python-virutal-environment">Set up your python virutal environment</a><ul>
+<li><a class="reference internal" href="#install-the-python-virtuenv-package-ubuntu-debian">Install the python virtuenv package(Ubuntu/Debian)</a></li>
+<li><a class="reference internal" href="#install-the-python-virtuenv-package-fedora">Install the python virtuenv package(Fedora)</a></li>
+<li><a class="reference internal" href="#create-the-python-virtualenv">Create the python virtualenv</a></li>
+<li><a class="reference internal" href="#make-it-active">Make it active</a></li>
+<li><a class="reference internal" href="#install-the-nova-client-software">Install the nova client software</a></li>
+<li><a class="reference internal" href="#create-the-config-file">Create the config file</a></li>
+<li><a class="reference internal" href="#test-it-out">Test it out</a></li>
+<li><a class="reference internal" href="#add-your-key">Add your key</a></li>
+<li><a class="reference internal" href="#boot-and-log-into-a-server">Boot and Log into a server</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Openstack Related Documentation</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/openstackdocs/connect_to_rackspace_public_cloud.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="connect-to-rackspace-public-cloud">
+<h1>Connect To Rackspace Public Cloud<a class="headerlink" href="#connect-to-rackspace-public-cloud" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="set-up-your-python-virutal-environment">
+<h2>Set up your python virutal environment<a class="headerlink" href="#set-up-your-python-virutal-environment" title="Permalink to this headline">¶</a></h2>
+<p>Before connecting, we will need all of the openstack client tools.
+You do NOT want to go down the road of using the OS provided python
+modules or things will eventually break.  Its just easier to deal
+with a virtualenv in the long run.</p>
+<div class="section" id="install-the-python-virtuenv-package-ubuntu-debian">
+<h3>Install the python virtuenv package(Ubuntu/Debian)<a class="headerlink" href="#install-the-python-virtuenv-package-ubuntu-debian" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="install-the-python-virtuenv-package-fedora">
+<h3>Install the python virtuenv package(Fedora)<a class="headerlink" href="#install-the-python-virtuenv-package-fedora" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="create-the-python-virtualenv">
+<h3>Create the python virtualenv<a class="headerlink" href="#create-the-python-virtualenv" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="make-it-active">
+<h3>Make it active<a class="headerlink" href="#make-it-active" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="install-the-nova-client-software">
+<h3>Install the nova client software<a class="headerlink" href="#install-the-nova-client-software" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="create-the-config-file">
+<h3>Create the config file<a class="headerlink" href="#create-the-config-file" title="Permalink to this headline">¶</a></h3>
+<p>I like to create a different entry for each region to keep
+from having to put full –os-region-name argument on every
+call.</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>cat &lt;&lt;EOF &gt; $HOME/.config/openstack/clouds.yaml
+clouds:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>rs-dfw:</dt>
+<dd><dl class="first docutils">
+<dt>auth:</dt>
+<dd>auth_url: ‘<a class="reference external" href="https://identity.api.rackspacecloud.com/v2.0/">https://identity.api.rackspacecloud.com/v2.0/</a>’
+project_id: rs-tenant-id
+username: rs-user
+password: rs-pass</dd>
+</dl>
+<p class="last">region_name: DFW</p>
+</dd>
+<dt>rs-iad:</dt>
+<dd><dl class="first docutils">
+<dt>auth:</dt>
+<dd>auth_url: ‘<a class="reference external" href="https://identity.api.rackspacecloud.com/v2.0/">https://identity.api.rackspacecloud.com/v2.0/</a>’
+project_id: rs-tenant-id
+username: rs-user
+password: rs-pass</dd>
+</dl>
+<p class="last">region_name: IAD</p>
+</dd>
+<dt>rs-ord:</dt>
+<dd><dl class="first docutils">
+<dt>auth:</dt>
+<dd>auth_url: ‘<a class="reference external" href="https://identity.api.rackspacecloud.com/v2.0/">https://identity.api.rackspacecloud.com/v2.0/</a>’
+project_id: rs-tenant-id
+username: rs-user
+password: rs-pass</dd>
+</dl>
+<p class="last">region_name: ORD</p>
+</dd>
+<dt>rs-lon:</dt>
+<dd><dl class="first docutils">
+<dt>auth:</dt>
+<dd>auth_url: ‘<a class="reference external" href="https://identity.api.rackspacecloud.com/v2.0/">https://identity.api.rackspacecloud.com/v2.0/</a>’
+project_id: rs-tenant-id
+username: rs-user
+password: rs-pass</dd>
+</dl>
+<p class="last">region_name: LON</p>
+</dd>
+<dt>rs-syd:</dt>
+<dd><dl class="first docutils">
+<dt>auth:</dt>
+<dd>auth_url: ‘<a class="reference external" href="https://identity.api.rackspacecloud.com/v2.0/">https://identity.api.rackspacecloud.com/v2.0/</a>’
+project_id: rs-tenant-id
+username: rs-user
+password: rs-pass</dd>
+</dl>
+<p class="last">region_name: SYD</p>
+</dd>
+<dt>rs-hkg:</dt>
+<dd><dl class="first docutils">
+<dt>auth:</dt>
+<dd>auth_url: ‘<a class="reference external" href="https://identity.api.rackspacecloud.com/v2.0/">https://identity.api.rackspacecloud.com/v2.0/</a>’
+project_id: rs-tenant-id
+username: rs-user
+password: rs-pass</dd>
+</dl>
+<p class="last">region_name: HKG</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>EOF</p>
+</div>
+<div class="section" id="test-it-out">
+<h3>Test it out<a class="headerlink" href="#test-it-out" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="add-your-key">
+<h3>Add your key<a class="headerlink" href="#add-your-key" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="boot-and-log-into-a-server">
+<h3>Boot and Log into a server<a class="headerlink" href="#boot-and-log-into-a-server" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="index.html" title="Openstack Related Documentation"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MerlinTechs</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Openstack Related Documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Shannon Mitchell.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+    </div>
+  </body>
+</html>
