@@ -115,7 +115,7 @@ EOF
 Test it out
 -----------
 
-.. code-block::
+.. code-block:: sh
   
   openstack --os-cloud rs-dfw catalog list
   openstack --os-cloud rs-dfw server list
@@ -126,7 +126,7 @@ Test it out
 Add your key
 ------------
 
-.. code-block::
+.. code-block:: sh
 
   openstack --os-cloud rs-dfw keypair list
   ssh-keygen  # To generate a local ssh keypair if needed 
@@ -136,7 +136,7 @@ Add your key
 Boot and Log into a server
 ----------------------------
 
-.. code-block::
+.. code-block:: sh
 
   openstack --os-cloud rs-dfw server create --flavor "512MB Standard Instance" --image "Fedora 26 (PVHVM)" --key-name mytestkey test01
   openstack --os-cloud rs-dfw server list

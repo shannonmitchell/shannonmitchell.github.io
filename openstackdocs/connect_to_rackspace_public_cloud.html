@@ -197,12 +197,33 @@ password: rs-pass</dd>
 </div>
 <div class="section" id="test-it-out">
 <h3>Test it out<a class="headerlink" href="#test-it-out" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>openstack --os-cloud rs-dfw catalog list
+openstack --os-cloud rs-dfw server list
+openstack --os-cloud rs-dfw flavor list
+openstack --os-cloud rs-dfw image list
+</pre></div>
+</div>
 </div>
 <div class="section" id="add-your-key">
 <h3>Add your key<a class="headerlink" href="#add-your-key" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>openstack --os-cloud rs-dfw keypair list
+ssh-keygen  <span class="c1"># To generate a local ssh keypair if needed</span>
+openstack --os-cloud rs-dfw keypair create --public-key <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/.ssh/id_rsa.pub mytestkey
+</pre></div>
+</div>
 </div>
 <div class="section" id="boot-and-log-into-a-server">
 <h3>Boot and Log into a server<a class="headerlink" href="#boot-and-log-into-a-server" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>openstack --os-cloud rs-dfw server create --flavor <span class="s2">&quot;512MB Standard Instance&quot;</span> --image <span class="s2">&quot;Fedora 26 (PVHVM)&quot;</span> --key-name mytestkey test01
+openstack --os-cloud rs-dfw server list
+openstack --os-cloud rs-dfw server show test01
+
+ssh root@&lt;public_ip_from_previous_command&gt;
+ctrl-d
+
+openstack --os-cloud rs-dfw server delete test01
+</pre></div>
+</div>
 </div>
 </div>
 </div>
