@@ -169,3 +169,16 @@ each.
   openstack help
   openstack help command
   openstack help command subcommand
+
+
+Future Use
+----------
+
+Remember to source your virtualenv activate file before running any openstack 
+commands.
+
+.. code-block:: sh
+
+  . ${HOME}/rs_pub_venv/bin/activate
+
+
