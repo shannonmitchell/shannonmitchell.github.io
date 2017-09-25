@@ -6,7 +6,7 @@ Creating your own github site using sphinx
 Set up a python virtualenv and install software
 ***********************************************
 
-.. source-code:: sh
+.. code-block:: sh
 
   cd ~/
   apt-get install python-virtualenv python-dev build-essential
@@ -20,7 +20,7 @@ Pull down your personal github pages repo
 
 Go into github and create a new repository called <username>.github.io
 
-.. source-code:: sh
+.. code-block:: sh
 
   cd ~/
   git clone git@github.com:shannonmitchell/shannonmitchell.github.io
@@ -34,7 +34,7 @@ Create your source repo
 
 I first went into github and created a new repo called merlintechs-source.
 
-.. source-code:: sh
+.. code-block:: sh
 
   cd ~/
   mkdir merlintechs-source
@@ -60,7 +60,7 @@ I first went into github and created a new repo called merlintechs-source.
 
   vi Makefile
 
-.. source-code:: sh
+.. code-block:: sh
 
   ...
   BUILDDIR = /path/to/local/repo/shannonmitchell.github.io/
@@ -70,7 +70,7 @@ I first went into github and created a new repo called merlintechs-source.
           mv $(BUILDDIR)/html/* $(PUBLISH_REPO)/; cd $(PUBLISH_REPO); git add .; git commit -m "rebuild docs"; git push origin master
 
 
-.. source-code:: sh
+.. code-block:: sh
 
   make allthethings
 

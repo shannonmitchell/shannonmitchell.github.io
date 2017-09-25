@@ -24,8 +24,7 @@
     <script type="text/javascript" src="../_static/bizstyle.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Linux Related Documentation" href="../linuxdocs/index.html" />
-    <link rel="prev" title="Merlintechs" href="../index.html" />
+    <link rel="prev" title="General Documentation" href="index.html" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <!--[if lt IE 9]>
     <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
@@ -39,12 +38,10 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../linuxdocs/index.html" title="Linux Related Documentation"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="../index.html" title="Merlintechs"
+          <a href="index.html" title="General Documentation"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">MerlinTechs</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MerlinTechs</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">General Documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -64,11 +61,8 @@
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../index.html"
-                        title="previous chapter">Merlintechs</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="../linuxdocs/index.html"
-                        title="next chapter">Linux Related Documentation</a></p>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">General Documentation</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -98,14 +92,68 @@
 <h1>Creating your own github site using sphinx<a class="headerlink" href="#creating-your-own-github-site-using-sphinx" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="set-up-a-python-virtualenv-and-install-software">
 <h2>Set up a python virtualenv and install software<a class="headerlink" href="#set-up-a-python-virtualenv-and-install-software" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-sh"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/
+apt-get install python-virtualenv python-dev build-essential
+virtualenv merlintechs-source-virtualenv
+. merlintechs-source-virtulenv
+pip install python-sphinx
+</pre></div>
+</div>
 </div>
 <div class="section" id="pull-down-your-personal-github-pages-repo">
 <h2>Pull down your personal github pages repo<a class="headerlink" href="#pull-down-your-personal-github-pages-repo" title="Permalink to this headline">¶</a></h2>
 <p>Go into github and create a new repository called &lt;username&gt;.github.io</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/
+git clone git@github.com:shannonmitchell/shannonmitchell.github.io
+<span class="nb">cd</span> shannonmitchell.github.io
+git config --global user.name shannonmitchell
+git config --global user.email shannon.mitchell@merlintechs.com
+</pre></div>
+</div>
 </div>
 <div class="section" id="create-your-source-repo">
 <h2>Create your source repo<a class="headerlink" href="#create-your-source-repo" title="Permalink to this headline">¶</a></h2>
 <p>I first went into github and created a new repo called merlintechs-source.</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/
+mkdir merlintechs-source
+<span class="nb">cd</span> merlintechs-source
+git init
+vi README.rst
+   <span class="o">(</span>place your own docs in here...<span class="o">)</span>
+git add README.rst
+mkdir docs
+<span class="nb">cd</span> docs
+
+sphinx-quickstart
+  <span class="o">(</span>kept defaults except <span class="k">for</span> the following<span class="o">)</span>
+  <span class="o">(</span>Project Name: Merlintechs<span class="o">)</span>
+  <span class="o">(</span>Author Name: Shannon Mitchell<span class="o">)</span>
+  <span class="o">(</span>create .nojeckll file to publish the document on github pages<span class="o">(</span>y<span class="o">))</span>
+
+git config --global user.name shannonmitchell
+git config --global user.email shannon.mitchell@merlintechs.com
+git commit -m <span class="s1">&#39;Creating initial sphinx managed source repo&#39;</span>
+git remote add origin git@github.com:shannonmitchell/merlintechs-source.git
+git push origin master
+
+vi Makefile
+</pre></div>
+</div>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>...
+<span class="nv">BUILDDIR</span> <span class="o">=</span> /path/to/local/repo/shannonmitchell.github.io/
+<span class="nv">PUBLISH_REPO</span> <span class="o">=</span> ../../shannonmitchell.github.io/
+...
+allthethings: html
+        mv <span class="k">$(</span>BUILDDIR<span class="k">)</span>/html/* <span class="k">$(</span>PUBLISH_REPO<span class="k">)</span>/<span class="p">;</span> <span class="nb">cd</span> <span class="k">$(</span>PUBLISH_REPO<span class="k">)</span><span class="p">;</span> git add .<span class="p">;</span> git commit -m <span class="s2">&quot;rebuild docs&quot;</span><span class="p">;</span> git push origin master
+</pre></div>
+</div>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>make allthethings
+
+git add Makefile
+git commit -m <span class="s2">&quot;save the things&quot;</span>
+git push origin master
+</pre></div>
+</div>
 </div>
 <div class="section" id="view-it-in-your-browser">
 <h2>View it in your browser<a class="headerlink" href="#view-it-in-your-browser" title="Permalink to this headline">¶</a></h2>
@@ -127,12 +175,10 @@
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../linuxdocs/index.html" title="Linux Related Documentation"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="../index.html" title="Merlintechs"
+          <a href="index.html" title="General Documentation"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">MerlinTechs</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">MerlinTechs</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >General Documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
