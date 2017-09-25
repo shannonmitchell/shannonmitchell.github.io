@@ -145,56 +145,54 @@ call.</p>
 vi <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/.config/openstack/clouds.yml
 </pre></div>
 </div>
-<div class="highlight-sh"><div class="highlight"><pre><span></span>cat <span class="s">&lt;&lt;EOF &gt; $HOME/.config/openstack/clouds.yaml</span>
-<span class="s">clouds:</span>
-<span class="s">  rs-dfw:</span>
-<span class="s">    auth:</span>
-<span class="s">      auth_url: &#39;https://identity.api.rackspacecloud.com/v2.0/&#39;</span>
-<span class="s">      project_id: rs-tenant-id</span>
-<span class="s">      username: rs-user</span>
-<span class="s">      password: rs-pass</span>
-<span class="s">    region_name: DFW</span>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>clouds:
+  rs-dfw:
+    auth:
+      auth_url: <span class="s1">&#39;https://identity.api.rackspacecloud.com/v2.0/&#39;</span>
+      project_id: rs-tenant-id
+      username: rs-user
+      password: rs-pass
+    region_name: DFW
 
-<span class="s">  rs-iad:</span>
-<span class="s">    auth:</span>
-<span class="s">      auth_url: &#39;https://identity.api.rackspacecloud.com/v2.0/&#39;</span>
-<span class="s">      project_id: rs-tenant-id</span>
-<span class="s">      username: rs-user</span>
-<span class="s">      password: rs-pass</span>
-<span class="s">    region_name: IAD</span>
+  rs-iad:
+    auth:
+      auth_url: <span class="s1">&#39;https://identity.api.rackspacecloud.com/v2.0/&#39;</span>
+      project_id: rs-tenant-id
+      username: rs-user
+      password: rs-pass
+    region_name: IAD
 
-<span class="s">  rs-ord:</span>
-<span class="s">    auth:</span>
-<span class="s">      auth_url: &#39;https://identity.api.rackspacecloud.com/v2.0/&#39;</span>
-<span class="s">      project_id: rs-tenant-id</span>
-<span class="s">      username: rs-user</span>
-<span class="s">      password: rs-pass</span>
-<span class="s">    region_name: ORD</span>
+  rs-ord:
+    auth:
+      auth_url: <span class="s1">&#39;https://identity.api.rackspacecloud.com/v2.0/&#39;</span>
+      project_id: rs-tenant-id
+      username: rs-user
+      password: rs-pass
+    region_name: ORD
 
-<span class="s">  rs-lon:</span>
-<span class="s">    auth:</span>
-<span class="s">      auth_url: &#39;https://identity.api.rackspacecloud.com/v2.0/&#39;</span>
-<span class="s">      project_id: rs-tenant-id</span>
-<span class="s">      username: rs-user</span>
-<span class="s">      jpassword: rs-pass</span>
-<span class="s">    region_name: LON</span>
+  rs-lon:
+    auth:
+      auth_url: <span class="s1">&#39;https://identity.api.rackspacecloud.com/v2.0/&#39;</span>
+      project_id: rs-tenant-id
+      username: rs-user
+      jpassword: rs-pass
+    region_name: LON
 
-<span class="s">  rs-syd:</span>
-<span class="s">    auth:</span>
-<span class="s">      auth_url: &#39;https://identity.api.rackspacecloud.com/v2.0/&#39;</span>
-<span class="s">      project_id: rs-tenant-id</span>
-<span class="s">      username: rs-user</span>
-<span class="s">      password: rs-pass</span>
-<span class="s">    region_name: SYD</span>
+  rs-syd:
+    auth:
+      auth_url: <span class="s1">&#39;https://identity.api.rackspacecloud.com/v2.0/&#39;</span>
+      project_id: rs-tenant-id
+      username: rs-user
+      password: rs-pass
+    region_name: SYD
 
-<span class="s">  rs-hkg:</span>
-<span class="s">    auth:</span>
-<span class="s">      auth_url: &#39;https://identity.api.rackspacecloud.com/v2.0/&#39;</span>
-<span class="s">      project_id: rs-tenant-id</span>
-<span class="s">      username: rs-user</span>
-<span class="s">      password: rs-pass</span>
-<span class="s">    region_name: HKG</span>
-<span class="s">EOF</span>
+  rs-hkg:
+    auth:
+      auth_url: <span class="s1">&#39;https://identity.api.rackspacecloud.com/v2.0/&#39;</span>
+      project_id: rs-tenant-id
+      username: rs-user
+      password: rs-pass
+    region_name: HKG
 </pre></div>
 </div>
 </div>
