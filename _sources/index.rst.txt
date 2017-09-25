@@ -13,5 +13,6 @@ probably be a work in progress for quite a while.
    :maxdepth: 1
    :caption: Documentation Links:
 
-   troubleshooting/index.rst
+   linuxdocs/index.rst
+   openstackdocs/index.rst
 
