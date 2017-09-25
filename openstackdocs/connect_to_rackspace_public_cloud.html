@@ -62,6 +62,7 @@
 <li><a class="reference internal" href="#test-it-out">Test it out</a></li>
 <li><a class="reference internal" href="#add-your-key">Add your key</a></li>
 <li><a class="reference internal" href="#boot-and-log-into-a-server">Boot and Log into a server</a></li>
+<li><a class="reference internal" href="#all-the-other-things">All the other things</a></li>
 </ul>
 </li>
 </ul>
@@ -98,12 +99,15 @@
             
   <div class="section" id="connect-to-rackspace-public-cloud">
 <h1>Connect To Rackspace Public Cloud<a class="headerlink" href="#connect-to-rackspace-public-cloud" title="Permalink to this headline">¶</a></h1>
+<p>This is just for python-openstackclient configuration.  The older way was to
+source environment files and use separate clients for each service.  You would
+have to use something like supernova to manage all of the different
+environments.  The openstack client this built into its own config file.</p>
 <div class="section" id="set-up-your-python-virutal-environment">
 <h2>Set up your python virutal environment<a class="headerlink" href="#set-up-your-python-virutal-environment" title="Permalink to this headline">¶</a></h2>
-<p>Before connecting, we will need all of the openstack client tools.
-You do NOT want to go down the road of using the OS provided python
-modules or things will eventually break.  Its just easier to deal
-with a virtualenv in the long run.</p>
+<p>Before connecting, we will need all of the openstack client tools.  You do NOT
+want to go down the road of using the OS provided python modules or things will
+eventually break.  Its just easier to deal with a virtualenv in the long run.</p>
 <div class="section" id="install-the-python-virtuenv-package-ubuntu-debian">
 <h3>Install the python virtuenv package(Ubuntu/Debian)<a class="headerlink" href="#install-the-python-virtuenv-package-ubuntu-debian" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-sh"><div class="highlight"><pre><span></span>apt-get update
@@ -223,6 +227,17 @@ ssh root@&lt;public_ip_from_previous_command&gt;
 ctrl-d
 
 openstack --os-cloud rs-dfw server delete test01
+</pre></div>
+</div>
+</div>
+<div class="section" id="all-the-other-things">
+<h3>All the other things<a class="headerlink" href="#all-the-other-things" title="Permalink to this headline">¶</a></h3>
+<p>You can use help to get all of the available/required settings and arguments.
+A command may have several layers and the openstack help will give help for
+each.</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>openstack <span class="nb">help</span>
+openstack <span class="nb">help</span> <span class="nb">command</span>
+openstack <span class="nb">help</span> <span class="nb">command</span> subcommand
 </pre></div>
 </div>
 </div>

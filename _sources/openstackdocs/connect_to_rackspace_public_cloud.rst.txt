@@ -2,13 +2,17 @@
 Connect To Rackspace Public Cloud
 ##################################
 
+This is just for python-openstackclient configuration.  The older way was to 
+source environment files and use separate clients for each service.  You would 
+have to use something like supernova to manage all of the different 
+environments.  The openstack client this built into its own config file.   
+
 Set up your python virutal environment
 **************************************
 
-Before connecting, we will need all of the openstack client tools.  
-You do NOT want to go down the road of using the OS provided python
-modules or things will eventually break.  Its just easier to deal
-with a virtualenv in the long run.
+Before connecting, we will need all of the openstack client tools.  You do NOT 
+want to go down the road of using the OS provided python modules or things will 
+eventually break.  Its just easier to deal with a virtualenv in the long run.
 
 Install the python virtuenv package(Ubuntu/Debian)
 --------------------------------------------------
@@ -152,3 +156,16 @@ Boot and Log into a server
   openstack --os-cloud rs-dfw server delete test01
 
 
+
+All the other things
+--------------------
+
+You can use help to get all of the available/required settings and arguments.
+A command may have several layers and the openstack help will give help for
+each.
+
+.. code-block:: sh
+
+  openstack help
+  openstack help command
+  openstack help command subcommand
