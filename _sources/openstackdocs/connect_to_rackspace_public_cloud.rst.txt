@@ -65,56 +65,56 @@ call.
 
 .. code-block:: sh
 
-cat <<EOF > $HOME/.config/openstack/clouds.yaml
-clouds:
-  rs-dfw:
-    auth:
-      auth_url: 'https://identity.api.rackspacecloud.com/v2.0/'
-      project_id: rs-tenant-id
-      username: rs-user
-      password: rs-pass
-    region_name: DFW
+  cat <<EOF > $HOME/.config/openstack/clouds.yaml
+  clouds:
+    rs-dfw:
+      auth:
+        auth_url: 'https://identity.api.rackspacecloud.com/v2.0/'
+        project_id: rs-tenant-id
+        username: rs-user
+        password: rs-pass
+      region_name: DFW
 
-  rs-iad:
-    auth:
-      auth_url: 'https://identity.api.rackspacecloud.com/v2.0/'
-      project_id: rs-tenant-id
-      username: rs-user
-      password: rs-pass
-    region_name: IAD
+    rs-iad:
+      auth:
+        auth_url: 'https://identity.api.rackspacecloud.com/v2.0/'
+        project_id: rs-tenant-id
+        username: rs-user
+        password: rs-pass
+      region_name: IAD
 
-  rs-ord:
-    auth:
-      auth_url: 'https://identity.api.rackspacecloud.com/v2.0/'
-      project_id: rs-tenant-id
-      username: rs-user
-      password: rs-pass
-    region_name: ORD
+    rs-ord:
+      auth:
+        auth_url: 'https://identity.api.rackspacecloud.com/v2.0/'
+        project_id: rs-tenant-id
+        username: rs-user
+        password: rs-pass
+      region_name: ORD
 
-  rs-lon:
-    auth:
-      auth_url: 'https://identity.api.rackspacecloud.com/v2.0/'
-      project_id: rs-tenant-id
-      username: rs-user
-      password: rs-pass
-    region_name: LON
+    rs-lon:
+      auth:
+        auth_url: 'https://identity.api.rackspacecloud.com/v2.0/'
+        project_id: rs-tenant-id
+        username: rs-user
+        jpassword: rs-pass
+      region_name: LON
 
-  rs-syd:
-    auth:
-      auth_url: 'https://identity.api.rackspacecloud.com/v2.0/'
-      project_id: rs-tenant-id
-      username: rs-user
-      password: rs-pass
-    region_name: SYD
+    rs-syd:
+      auth:
+        auth_url: 'https://identity.api.rackspacecloud.com/v2.0/'
+        project_id: rs-tenant-id
+        username: rs-user
+        password: rs-pass
+      region_name: SYD
 
-  rs-hkg:
-    auth:
-      auth_url: 'https://identity.api.rackspacecloud.com/v2.0/'
-      project_id: rs-tenant-id
-      username: rs-user
-      password: rs-pass
-    region_name: HKG
-EOF 
+    rs-hkg:
+      auth:
+        auth_url: 'https://identity.api.rackspacecloud.com/v2.0/'
+        project_id: rs-tenant-id
+        username: rs-user
+        password: rs-pass
+      region_name: HKG
+  EOF 
 
 
 
