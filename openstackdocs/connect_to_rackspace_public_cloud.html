@@ -106,24 +106,45 @@ modules or things will eventually break.  Its just easier to deal
 with a virtualenv in the long run.</p>
 <div class="section" id="install-the-python-virtuenv-package-ubuntu-debian">
 <h3>Install the python virtuenv package(Ubuntu/Debian)<a class="headerlink" href="#install-the-python-virtuenv-package-ubuntu-debian" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>apt-get update
+apt-get install python-virtualenv
+</pre></div>
+</div>
 </div>
 <div class="section" id="install-the-python-virtuenv-package-fedora">
 <h3>Install the python virtuenv package(Fedora)<a class="headerlink" href="#install-the-python-virtuenv-package-fedora" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>dnf install python-virtualenv
+</pre></div>
+</div>
 </div>
 <div class="section" id="create-the-python-virtualenv">
 <h3>Create the python virtualenv<a class="headerlink" href="#create-the-python-virtualenv" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>virtualenv <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/rs_pub_venv
+</pre></div>
+</div>
 </div>
 <div class="section" id="make-it-active">
 <h3>Make it active<a class="headerlink" href="#make-it-active" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>. <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/rs_pub_venv/bin/activate
+</pre></div>
+</div>
 </div>
 <div class="section" id="install-the-nova-client-software">
 <h3>Install the nova client software<a class="headerlink" href="#install-the-nova-client-software" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>pip install python-openstackclient
+</pre></div>
+</div>
 </div>
 <div class="section" id="create-the-config-file">
 <h3>Create the config file<a class="headerlink" href="#create-the-config-file" title="Permalink to this headline">¶</a></h3>
 <p>I like to create a different entry for each region to keep
 from having to put full –os-region-name argument on every
 call.</p>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>mkdir -p <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/.config/openstack
+
+vi <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/.config/openstack/clouds.yml
+</pre></div>
+</div>
 <div class="highlight-sh"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>

@@ -14,6 +14,7 @@ Install the python virtuenv package(Ubuntu/Debian)
 --------------------------------------------------
 
 .. code-block:: sh
+
   apt-get update
   apt-get install python-virtualenv  
 
@@ -21,6 +22,7 @@ Install the python virtuenv package(Fedora)
 --------------------------------------------------
 
 .. code-block:: sh
+
   dnf install python-virtualenv  
 
 
@@ -28,6 +30,7 @@ Create the python virtualenv
 ----------------------------
 
 .. code-block:: sh
+
   virtualenv ${HOME}/rs_pub_venv
 
 
@@ -35,6 +38,7 @@ Make it active
 ----------------
 
 .. code-block:: sh
+
   . ${HOME}/rs_pub_venv/bin/activate
 
 
@@ -42,6 +46,7 @@ Install the nova client software
 --------------------------------
 
 .. code-block:: sh
+
   pip install python-openstackclient
 
 
@@ -53,6 +58,7 @@ from having to put full --os-region-name argument on every
 call.
 
 .. code-block:: sh
+
   mkdir -p ${HOME}/.config/openstack
 
   vi ${HOME}/.config/openstack/clouds.yml
