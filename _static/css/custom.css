@@ -1,4 +1,5 @@
 div.displayfile {
     background-color: gray;
     border-style: solid;
+    white-space: pre;
 }
