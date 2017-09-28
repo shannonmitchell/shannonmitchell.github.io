@@ -77,7 +77,7 @@ call.
 
   vi ${HOME}/.config/openstack/clouds.yml
 
-.. code-block:: sh
+.. code-block:: none
 
   clouds:
     rs-dfw:
