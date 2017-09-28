@@ -91,5 +91,33 @@ It make take a few seconds to update. When it did, I could access the site at th
 http://shannonmitchell.github.io
 
 
+***********
+Custom CSS
+***********
 
+I wanted to create a separate pygment background when displaying file contents.
+The following was done.
+
+Edit the conf.py and pull in a custom css when building the html.
+
+.. code-block:: sh
+
+  vi conf.py
+
+.. code-block:: none
+
+  def setup(app):
+    app.add_stylesheet('css/custom.css')
+
+
+Create the custom css file called in the add_stylesheet method above..
+
+.. code-block:: sh
+
+  mkdir _static/css
+  vi _static/css/custom.css
+
+.. code-block:: none
+
+  
 
