@@ -5,6 +5,7 @@ div.displayfile {
     white-space: pre;
     font-family: monospace;
     display: block;
+    overflow: auto;
     unicode-bidi: embed;
     margin-left: 30px;
     margin-right: 30px;
