@@ -14,16 +14,19 @@ Before connecting, we will need all of the openstack client tools.  You do NOT
 want to go down the road of using the OS provided python modules or things will 
 eventually break.  Its just easier to deal with a virtualenv in the long run.
 
-Install the python virtuenv package(Ubuntu/Debian)
---------------------------------------------------
+Install the python virtuenv package
+===================================
+
+Ubuntu/Debian
+-------------
 
 .. code-block:: sh
 
   apt-get update
   apt-get install python-virtualenv  
 
-Install the python virtuenv package(Fedora)
---------------------------------------------------
+Fedora/Redhat
+-------------
 
 .. code-block:: sh
 
@@ -31,7 +34,7 @@ Install the python virtuenv package(Fedora)
 
 
 Create the python virtualenv
-----------------------------
+=============================
 
 .. code-block:: sh
 
@@ -39,7 +42,7 @@ Create the python virtualenv
 
 
 Make it active
-----------------
+==============
 
 .. code-block:: sh
 
@@ -47,7 +50,7 @@ Make it active
 
 
 Install the nova client software
---------------------------------
+********************************
 
 .. code-block:: sh
 
@@ -55,7 +58,7 @@ Install the nova client software
 
 
 Create the config file
------------------------
+**********************
 
 I like to create a different entry for each region to keep
 from having to put full --os-region-name argument on every
@@ -121,7 +124,7 @@ call.
 
 
 Test it out
------------
+***********
 
 .. code-block:: sh
   
@@ -132,7 +135,7 @@ Test it out
 
 
 Add your key
-------------
+************
 
 .. code-block:: sh
 
@@ -142,7 +145,7 @@ Add your key
 
 
 Boot and Log into a server
-----------------------------
+**************************
 
 .. code-block:: sh
 
@@ -158,7 +161,7 @@ Boot and Log into a server
 
 
 All the other things
---------------------
+********************
 
 You can use help to get all of the available/required settings and arguments.
 A command may have several layers and the openstack help will give help for
@@ -172,7 +175,7 @@ each.
 
 
 Future Use
-----------
+**********
 
 Remember to source your virtualenv activate file before running any openstack 
 commands.

@@ -57,10 +57,15 @@
   <ul>
 <li><a class="reference internal" href="#">Connect To Rackspace Public Cloud</a><ul>
 <li><a class="reference internal" href="#set-up-your-python-virutal-environment">Set up your python virutal environment</a><ul>
-<li><a class="reference internal" href="#install-the-python-virtuenv-package-ubuntu-debian">Install the python virtuenv package(Ubuntu/Debian)</a></li>
-<li><a class="reference internal" href="#install-the-python-virtuenv-package-fedora">Install the python virtuenv package(Fedora)</a></li>
+<li><a class="reference internal" href="#install-the-python-virtuenv-package">Install the python virtuenv package</a><ul>
+<li><a class="reference internal" href="#ubuntu-debian">Ubuntu/Debian</a></li>
+<li><a class="reference internal" href="#fedora-redhat">Fedora/Redhat</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#create-the-python-virtualenv">Create the python virtualenv</a></li>
 <li><a class="reference internal" href="#make-it-active">Make it active</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#install-the-nova-client-software">Install the nova client software</a></li>
 <li><a class="reference internal" href="#create-the-config-file">Create the config file</a></li>
 <li><a class="reference internal" href="#test-it-out">Test it out</a></li>
@@ -68,8 +73,6 @@
 <li><a class="reference internal" href="#boot-and-log-into-a-server">Boot and Log into a server</a></li>
 <li><a class="reference internal" href="#all-the-other-things">All the other things</a></li>
 <li><a class="reference internal" href="#future-use">Future Use</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -116,17 +119,20 @@ environments.  The openstack client this built into its own config file.</p>
 <p>Before connecting, we will need all of the openstack client tools.  You do NOT
 want to go down the road of using the OS provided python modules or things will
 eventually break.  Its just easier to deal with a virtualenv in the long run.</p>
-<div class="section" id="install-the-python-virtuenv-package-ubuntu-debian">
-<h3>Install the python virtuenv package(Ubuntu/Debian)<a class="headerlink" href="#install-the-python-virtuenv-package-ubuntu-debian" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="install-the-python-virtuenv-package">
+<h3>Install the python virtuenv package<a class="headerlink" href="#install-the-python-virtuenv-package" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="ubuntu-debian">
+<h4>Ubuntu/Debian<a class="headerlink" href="#ubuntu-debian" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-sh"><div class="highlight"><pre><span></span>apt-get update
 apt-get install python-virtualenv
 </pre></div>
 </div>
 </div>
-<div class="section" id="install-the-python-virtuenv-package-fedora">
-<h3>Install the python virtuenv package(Fedora)<a class="headerlink" href="#install-the-python-virtuenv-package-fedora" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="fedora-redhat">
+<h4>Fedora/Redhat<a class="headerlink" href="#fedora-redhat" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-sh"><div class="highlight"><pre><span></span>dnf install python-virtualenv
 </pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="create-the-python-virtualenv">
@@ -141,14 +147,15 @@ apt-get install python-virtualenv
 </pre></div>
 </div>
 </div>
+</div>
 <div class="section" id="install-the-nova-client-software">
-<h3>Install the nova client software<a class="headerlink" href="#install-the-nova-client-software" title="Permalink to this headline">¶</a></h3>
+<h2>Install the nova client software<a class="headerlink" href="#install-the-nova-client-software" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-sh"><div class="highlight"><pre><span></span>pip install python-openstackclient
 </pre></div>
 </div>
 </div>
 <div class="section" id="create-the-config-file">
-<h3>Create the config file<a class="headerlink" href="#create-the-config-file" title="Permalink to this headline">¶</a></h3>
+<h2>Create the config file<a class="headerlink" href="#create-the-config-file" title="Permalink to this headline">¶</a></h2>
 <p>I like to create a different entry for each region to keep
 from having to put full –os-region-name argument on every
 call.</p>
@@ -209,7 +216,7 @@ vi <span class="si">${</span><span class="nv">HOME</span><span class="si">}</spa
 </div>
 </div>
 <div class="section" id="test-it-out">
-<h3>Test it out<a class="headerlink" href="#test-it-out" title="Permalink to this headline">¶</a></h3>
+<h2>Test it out<a class="headerlink" href="#test-it-out" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-sh"><div class="highlight"><pre><span></span>openstack --os-cloud rs-dfw catalog list
 openstack --os-cloud rs-dfw server list
 openstack --os-cloud rs-dfw flavor list
@@ -218,7 +225,7 @@ openstack --os-cloud rs-dfw image list
 </div>
 </div>
 <div class="section" id="add-your-key">
-<h3>Add your key<a class="headerlink" href="#add-your-key" title="Permalink to this headline">¶</a></h3>
+<h2>Add your key<a class="headerlink" href="#add-your-key" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-sh"><div class="highlight"><pre><span></span>openstack --os-cloud rs-dfw keypair list
 ssh-keygen  <span class="c1"># To generate a local ssh keypair if needed</span>
 openstack --os-cloud rs-dfw keypair create --public-key <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/.ssh/id_rsa.pub mytestkey
@@ -226,7 +233,7 @@ openstack --os-cloud rs-dfw keypair create --public-key <span class="si">${</spa
 </div>
 </div>
 <div class="section" id="boot-and-log-into-a-server">
-<h3>Boot and Log into a server<a class="headerlink" href="#boot-and-log-into-a-server" title="Permalink to this headline">¶</a></h3>
+<h2>Boot and Log into a server<a class="headerlink" href="#boot-and-log-into-a-server" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-sh"><div class="highlight"><pre><span></span>openstack --os-cloud rs-dfw server create --flavor <span class="s2">&quot;512MB Standard Instance&quot;</span> --image <span class="s2">&quot;Fedora 26 (PVHVM)&quot;</span> --key-name mytestkey test01
 openstack --os-cloud rs-dfw server list
 openstack --os-cloud rs-dfw server show test01
@@ -239,7 +246,7 @@ openstack --os-cloud rs-dfw server delete test01
 </div>
 </div>
 <div class="section" id="all-the-other-things">
-<h3>All the other things<a class="headerlink" href="#all-the-other-things" title="Permalink to this headline">¶</a></h3>
+<h2>All the other things<a class="headerlink" href="#all-the-other-things" title="Permalink to this headline">¶</a></h2>
 <p>You can use help to get all of the available/required settings and arguments.
 A command may have several layers and the openstack help will give help for
 each.</p>
@@ -250,12 +257,11 @@ openstack <span class="nb">help</span> <span class="nb">command</span> subcomman
 </div>
 </div>
 <div class="section" id="future-use">
-<h3>Future Use<a class="headerlink" href="#future-use" title="Permalink to this headline">¶</a></h3>
+<h2>Future Use<a class="headerlink" href="#future-use" title="Permalink to this headline">¶</a></h2>
 <p>Remember to source your virtualenv activate file before running any openstack
 commands.</p>
 <div class="highlight-sh"><div class="highlight"><pre><span></span>. <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/rs_pub_venv/bin/activate
 </pre></div>
-</div>
 </div>
 </div>
 </div>
