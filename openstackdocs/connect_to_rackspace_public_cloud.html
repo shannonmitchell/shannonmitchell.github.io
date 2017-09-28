@@ -110,15 +110,17 @@
             
   <div class="section" id="connect-to-rackspace-public-cloud">
 <h1>Connect To Rackspace Public Cloud<a class="headerlink" href="#connect-to-rackspace-public-cloud" title="Permalink to this headline">¶</a></h1>
-<p>This is just for python-openstackclient configuration.  The older way was to
-source environment files and use separate clients for each service.  You would
-have to use something like supernova to manage all of the different
-environments.  The openstack client this built into its own config file.</p>
+<p>This is just for python-openstackclient configuration.  The more traditional way
+was to source environment files and use separate clients for each service.  You
+would have to use something like supernova to manage multiple environments. The
+python-openstack client has its own config file to accomplish the same thing.</p>
 <div class="section" id="set-up-your-python-virutal-environment">
 <h2>Set up your python virutal environment<a class="headerlink" href="#set-up-your-python-virutal-environment" title="Permalink to this headline">¶</a></h2>
 <p>Before connecting, we will need all of the openstack client tools.  You do NOT
 want to go down the road of using the OS provided python modules or things will
-eventually break.  Its just easier to deal with a virtualenv in the long run.</p>
+eventually break.  Its just easier to deal with a dedicated virtualenv just for
+python-openstack client use. The next time you go to update your workstation,
+this is one less thing you will need to worry about(mostly).</p>
 <div class="section" id="install-the-python-virtuenv-package">
 <h3>Install the python virtuenv package<a class="headerlink" href="#install-the-python-virtuenv-package" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="ubuntu-debian">
