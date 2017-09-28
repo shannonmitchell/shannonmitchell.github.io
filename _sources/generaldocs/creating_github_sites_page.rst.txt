@@ -129,3 +129,8 @@ Create the custom css file called in the add_stylesheet method above..
   test
   test 2
   test 3
+
+
+.. code-block:: blah
+
+  test me
