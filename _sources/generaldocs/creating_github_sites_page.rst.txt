@@ -122,9 +122,11 @@ Create the custom css file called in the add_stylesheet method above..
 .. raw:: html
 
   <div class="displayfile">
+  <pre>
   some text 2
   some more text 2
   some extra text
+  </pre>
   </div>
 
 
