@@ -7,6 +7,7 @@ source environment files and use separate clients for each service.  You would
 have to use something like supernova to manage all of the different 
 environments.  The openstack client this built into its own config file.   
 
+**************************************
 Set up your python virutal environment
 **************************************
 
@@ -49,6 +50,7 @@ Make it active
   . ${HOME}/rs_pub_venv/bin/activate
 
 
+********************************
 Install the nova client software
 ********************************
 
@@ -57,6 +59,7 @@ Install the nova client software
   pip install python-openstackclient
 
 
+**********************
 Create the config file
 **********************
 
@@ -123,6 +126,7 @@ call.
 
 
 
+***********
 Test it out
 ***********
 
@@ -134,6 +138,7 @@ Test it out
   openstack --os-cloud rs-dfw image list
 
 
+************
 Add your key
 ************
 
@@ -144,6 +149,7 @@ Add your key
   openstack --os-cloud rs-dfw keypair create --public-key ${HOME}/.ssh/id_rsa.pub mytestkey
 
 
+**************************
 Boot and Log into a server
 **************************
 
@@ -160,6 +166,7 @@ Boot and Log into a server
 
 
 
+********************
 All the other things
 ********************
 
@@ -174,6 +181,7 @@ each.
   openstack help command subcommand
 
 
+**********
 Future Use
 **********
 
