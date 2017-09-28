@@ -119,11 +119,13 @@ Create the custom css file called in the add_stylesheet method above..
 
 
 
-.. container:: displayfile
+.. raw:: html
 
+  <div class="displayfile">
   some text
   some more text
   some extra text
+  </div>
 
 
 test
