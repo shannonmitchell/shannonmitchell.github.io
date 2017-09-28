@@ -121,12 +121,8 @@ Create the custom css file called in the add_stylesheet method above..
 .. container:: displayfile
 
   div.viewcode-block:target {
-
       background-color: #f4debf;
       border-top: 1px solid #ac9;
       border-bottom: 1px solid #ac9;
-
   }
 
-
-TEst

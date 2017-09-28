@@ -1,8 +1,11 @@
 div.displayfile {
     background-color: gray;
     border-style: solid;
+    border-width: thin;
     white-space: pre;
     font-family: monospace;
     display: block;
     unicode-bidi: embed;
+    margin-left: 20px;
+    margin-right: 20px;
 }
