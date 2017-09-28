@@ -119,7 +119,7 @@ Create the custom css file called in the add_stylesheet method above..
 
 
 
-.. class:: displayfile
+.. container:: displayfile
 
   some text
   some more text
