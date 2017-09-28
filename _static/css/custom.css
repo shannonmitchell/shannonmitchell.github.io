@@ -2,4 +2,7 @@ div.displayfile {
     background-color: gray;
     border-style: solid;
     white-space: pre;
+    font-family: monospace;
+    display: block;
+    unicode-bidi: embed;
 }
