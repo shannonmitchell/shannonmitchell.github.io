@@ -1,12 +1,12 @@
-div.displayfile {
+div.displayfile:target {
     background-color: #f0f5f5;
     border-style: solid;
     border-width: thin;
-    white-space: pre;
-    font-family: monospace;
-    display: block;
-    overflow: auto;
-    unicode-bidi: embed;
-    margin-left: 20px;
-    margin-right: 20px;
+#    white-space: pre;
+#    font-family: monospace;
+#    display: block;
+#    overflow: auto;
+#    unicode-bidi: embed;
+#    margin-left: 20px;
+#    margin-right: 20px;
 }
