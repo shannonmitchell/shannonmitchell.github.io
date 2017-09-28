@@ -1,6 +1,4 @@
 div.displayfile {
     background-color: gray;
-    border-top: 1px solid #ac9;
-    border-bottom: 1px solid #ac9;
-    margin: 0.4em 1em;
+    border-style: solid;
 }
