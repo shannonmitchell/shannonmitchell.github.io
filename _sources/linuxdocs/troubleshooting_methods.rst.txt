@@ -29,7 +29,7 @@ communication path.
 
 
 
-..rubric:: Footnotes
+.. rubric:: Footnotes
 
 .. [#f1] `Aphantasia <https://en.wikipedia.org/wiki/Aphantasia>`_ 
 .. [#f2] `Binary Search <https://en.wikipedia.org/wiki/Binary_search_algorithm>`_
