@@ -83,12 +83,12 @@ with a ticket.  Do NOT trust the customer and do NOT trust the ticket.  This
 can lead to a goose chase and many wasted hours.  Many times it can even lead
 to breaking a good system while troubleshooting the wrong path. 
 
-When this is the situation get good information from the customer and take 
-notes while following the communications path.  When I say good information
-"I can't hit my betterdildos.com site" won't cut it.  Find out where they
-are connecting from and get them to put in the full url they are trying to
-hit.  Maybe they are typing in htttps://betterdildos.com and problem solved
-as they think the tripple ttt works better because they are ocd.
+Start with getting get good information from the customer and take notes while 
+following the communications path.  When I say good information "I can't hit 
+my betterdildos.com site" won't cut it.  Find out where they are connecting 
+from and get them to put in the full url they are trying to hit.  Maybe they 
+are typing in htttps://betterdildos.com and problem solved as they think the 
+tripple ttt works better because they are ocd.
 
 Lets say that its the same system as the binary section, but we don't know 
 that yet. So what is the first thing that happens when you type in a url
