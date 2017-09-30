@@ -57,7 +57,6 @@
 <li><a class="reference internal" href="#pull-down-your-personal-github-pages-repo">Pull down your personal github pages repo</a></li>
 <li><a class="reference internal" href="#create-your-source-repo">Create your source repo</a></li>
 <li><a class="reference internal" href="#view-it-in-your-browser">View it in your browser</a></li>
-<li><a class="reference internal" href="#custom-css">Custom CSS</a></li>
 </ul>
 </li>
 </ul>
@@ -161,38 +160,6 @@ git push origin master
 <h2>View it in your browser<a class="headerlink" href="#view-it-in-your-browser" title="Permalink to this headline">¶</a></h2>
 <p>It make take a few seconds to update. When it did, I could access the site at the following locaiton.</p>
 <p><a class="reference external" href="http://shannonmitchell.github.io">http://shannonmitchell.github.io</a></p>
-</div>
-<div class="section" id="custom-css">
-<h2>Custom CSS<a class="headerlink" href="#custom-css" title="Permalink to this headline">¶</a></h2>
-<p>I wanted to create a separate pygment background when displaying file contents.
-The following was done.</p>
-<p>Edit the conf.py and pull in a custom css when building the html.</p>
-<div class="highlight-sh"><div class="highlight"><pre><span></span>vi conf.py
-</pre></div>
-</div>
-<div class="highlight-none"><div class="highlight"><pre><span></span>def setup(app):
-  app.add_stylesheet(&#39;css/custom.css&#39;)
-</pre></div>
-</div>
-<p>Create the custom css file called in the add_stylesheet method above..</p>
-<div class="highlight-sh"><div class="highlight"><pre><span></span>mkdir _static/css
-vi _static/css/custom.css
-</pre></div>
-</div>
-<div class="highlight-none"><div class="highlight"><pre><span></span>some text 2
-some more text 2
-some extra text
-</pre></div>
-</div>
-<dl class="docutils">
-<dt>::</dt>
-<dd>test
-test 2
-test 3</dd>
-</dl>
-<div class="highlight-blah"><div class="highlight"><pre><span></span>test me
-</pre></div>
-</div>
 </div>
 </div>
 
