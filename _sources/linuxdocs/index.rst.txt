@@ -12,7 +12,6 @@ Linux Troubleshooting
 
 .. toctree::
    :maxdepth: 1
-   :caption: Documentation Links:
 
    troubleshooting_methods.rst
 
