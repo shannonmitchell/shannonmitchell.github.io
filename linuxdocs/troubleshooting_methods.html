@@ -1,0 +1,154 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Troubleshooting Methods &#8212; MerlinTechs</title>
+    <link rel="stylesheet" href="../_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Openstack Related Documentation" href="../openstackdocs/index.html" />
+    <link rel="prev" title="Linux Related Documentation" href="index.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../openstackdocs/index.html" title="Openstack Related Documentation"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Linux Related Documentation"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MerlinTechs</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Linux Related Documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/monkey_logo.png" alt="Logo"/>
+            </a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Linux Related Documentation</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../openstackdocs/index.html"
+                        title="next chapter">Openstack Related Documentation</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/linuxdocs/troubleshooting_methods.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="troubleshooting-methods">
+<h1>Troubleshooting Methods<a class="headerlink" href="#troubleshooting-methods" title="Permalink to this headline">¶</a></h1>
+<p>I have working on electronic and linux systems for about 20 years now.  I don’t
+and never will claim to be an expert on anything due to the field being in
+constant flux, but I have gotten “decent” at troubleshooting in general.  I have
+always had trouble seeing things in my minds eye <a class="footnote-reference" href="#f1" id="id1">[1]</a> which leads to overall
+memory issues, but allows me to not get lost in the details. When you are lost
+in the details, you are not taking the essential step back to look at the bigger
+picture needed for troubleshooting a system. And when it comes to electonics or
+technology in general, that larger picture is the communication path.</p>
+<p>The communications path at its source is a flow of electrons. When working on
+electronic systems in the army, that ment breaking out the oscope and placing a
+probe into different test points along the path of electron flow to see if
+everything before the probe is working as intended.  The same can be done with
+most technology in general.  Instead of tracing the path of electrons with an
+oscope or voltmeter, we are are using many tools and logs to “probe” points
+along the path.  This allows us to see if its working up to that point or not.</p>
+<p>The essense of troubleshooting most systems is knowing the communication path
+and ruling out sections of the path by “probing” a point along it.  So how do
+you know where to probe?  I usually go by one of two methods depending on how
+much I know the system’s communication path. If you know the system, a
+binary searchy <a class="footnote-reference" href="#f2" id="id2">[2]</a> is a good way to quickly get to the root of the issue. If
+you do not know the system, start from the beginning and follow the
+communication path.</p>
+<p>..arubric:: Footnotes</p>
+<table class="docutils footnote" frame="void" id="f1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><a class="reference external" href="https://en.wikipedia.org/wiki/Aphantasia">Aphantasia</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td><a class="reference external" href="https://en.wikipedia.org/wiki/Binary_search_algorithm">Binary Search</a></td></tr>
+</tbody>
+</table>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../openstackdocs/index.html" title="Openstack Related Documentation"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Linux Related Documentation"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MerlinTechs</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Linux Related Documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Shannon Mitchell.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+########################
+Troubleshooting Methods
+########################
+
+I have working on electronic and linux systems for about 20 years now.  I don't
+and never will claim to be an expert on anything due to the field being in 
+constant flux, but I have gotten "decent" at troubleshooting in general.  I have
+always had trouble seeing things in my minds eye [#f1]_ which leads to overall
+memory issues, but allows me to not get lost in the details. When you are lost
+in the details, you are not taking the essential step back to look at the bigger
+picture needed for troubleshooting a system. And when it comes to electonics or
+technology in general, that larger picture is the communication path.
+
+The communications path at its source is a flow of electrons. When working on 
+electronic systems in the army, that ment breaking out the oscope and placing a
+probe into different test points along the path of electron flow to see if 
+everything before the probe is working as intended.  The same can be done with 
+most technology in general.  Instead of tracing the path of electrons with an 
+oscope or voltmeter, we are are using many tools and logs to "probe" points
+along the path.  This allows us to see if its working up to that point or not. 
+
+The essense of troubleshooting most systems is knowing the communication path 
+and ruling out sections of the path by "probing" a point along it.  So how do
+you know where to probe?  I usually go by one of two methods depending on how
+much I know the system's communication path. If you know the system, a
+binary searchy [#f2]_ is a good way to quickly get to the root of the issue. If
+you do not know the system, start from the beginning and follow the 
+communication path.
+
+
+
+..arubric:: Footnotes
+
+.. [#f1] `Aphantasia <https://en.wikipedia.org/wiki/Aphantasia>`_ 
+.. [#f2] `Binary Search <https://en.wikipedia.org/wiki/Binary_search_algorithm>`_
