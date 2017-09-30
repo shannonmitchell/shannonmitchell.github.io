@@ -131,6 +131,10 @@ each component is a good probe point, but where do you start? You could start
 from the beginning and waste a lot of time checking each point along the path.
 The better approach is to pick a good point in the middle.  In this case in
 between the switch and the haproxy load balancer will be a nice place to start.</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>client browser &lt;=&gt; dc router &lt;=&gt; dc switch &lt;=&gt; haproxy load balancer &lt;=&gt; multiple nginx webheads &lt;=&gt; multiple php-fpm app servers &lt;=&gt; db
+                                               ^^^^^^^^^^^^^^^^^^^^^
+</pre></div>
+</div>
 <p>With a binary search, you start in the middle.  If the check is good you move
 halfway between the last probe point and the end of the path and check there.
 If the check was bad, move halfway between the start of the path and where
@@ -142,6 +146,10 @@ packets making it to the haproxy server, you can rule out the haproxy server,
 nginx webheads, php-fpm app servers and the db.  You no know that you will
 need to contact whoever is in charge of the router and switch(usually “netsec”),
 and have them check for packets on either side of the router.</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>client browser &lt;=&gt; dc router &lt;=&gt; dc switch &lt;=&gt; haproxy load balancer
+                   ^^^^^^^^^
+</pre></div>
+</div>
 </div>
 <div class="section" id="troubleshooting-an-unknown-system-by-following-the-path">
 <h2>Troubleshooting an Unknown System by Following the Path<a class="headerlink" href="#troubleshooting-an-unknown-system-by-following-the-path" title="Permalink to this headline">¶</a></h2>
