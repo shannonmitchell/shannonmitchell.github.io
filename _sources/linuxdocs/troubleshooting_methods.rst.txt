@@ -44,7 +44,7 @@ of this section, lets say it looks something like this.
 You have no idea where in that path the issue is occuring.  The path between
 each component is a good probe point, but where do you start? You could start
 from the beginning and waste a lot of time checking each point along the path.
-The better approach is to pick a good point in the beginning.  In this case in
+The better approach is to pick a good point in the middle.  In this case in
 between the switch and the haproxy load balancer will be a nice place to start.
 
 With a binary search, you start in the middle.  If the check is good you move
