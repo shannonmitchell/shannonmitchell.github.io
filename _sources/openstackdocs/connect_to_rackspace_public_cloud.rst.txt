@@ -2,25 +2,26 @@
 Connect To Rackspace Public Cloud
 ##################################
 
-This is just for python-openstackclient configuration.  The more traditional way
-was to source environment files and use separate clients for each service.  You 
-would have to use something like supernova to manage multiple environments. The 
-python-openstack client has its own config file to accomplish the same thing. 
+This page is just for python-openstackclient configuration.  The more 
+traditional way was to source environment files and use separate clients 
+for each service.  You would have to use something like supernova to manage 
+multiple environments. The python-openstack client has its own config file 
+to accomplish the same thing. 
 
 
 **************************************
-Set up your python virutal environment
+Set up your python virtual environment
 **************************************
 
-Before connecting, we will need all of the openstack client tools.  You do NOT 
-want to go down the road of using the OS provided python modules or things will 
-eventually break.  Its just easier to deal with a dedicated virtualenv just for
-python-openstack client use. The next time you go to update your workstation, 
-this is one less thing you will need to worry about(mostly).
+Before connecting, we will need all of the openstack client tools installed.  
+You do NOT want to go down the road of using the OS provided python modules 
+or things will eventually break.  Its just easier to deal with a dedicated 
+virtualenv just for python-openstack client use.  Its just one less thing
+to worry about the next time you update your workstation.
 
 
-Install the python virtuenv package
-===================================
+Install the python virtualenv package
+=====================================
 
 Ubuntu/Debian
 -------------

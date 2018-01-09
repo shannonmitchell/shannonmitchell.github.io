@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../_static/bizstyle.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
@@ -57,8 +58,8 @@
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Connect To Rackspace Public Cloud</a><ul>
-<li><a class="reference internal" href="#set-up-your-python-virutal-environment">Set up your python virutal environment</a><ul>
-<li><a class="reference internal" href="#install-the-python-virtuenv-package">Install the python virtuenv package</a><ul>
+<li><a class="reference internal" href="#set-up-your-python-virtual-environment">Set up your python virtual environment</a><ul>
+<li><a class="reference internal" href="#install-the-python-virtualenv-package">Install the python virtualenv package</a><ul>
 <li><a class="reference internal" href="#ubuntu-debian">Ubuntu/Debian</a></li>
 <li><a class="reference internal" href="#fedora-redhat">Fedora/Redhat</a></li>
 </ul>
@@ -111,19 +112,20 @@
             
   <div class="section" id="connect-to-rackspace-public-cloud">
 <h1>Connect To Rackspace Public Cloud<a class="headerlink" href="#connect-to-rackspace-public-cloud" title="Permalink to this headline">¶</a></h1>
-<p>This is just for python-openstackclient configuration.  The more traditional way
-was to source environment files and use separate clients for each service.  You
-would have to use something like supernova to manage multiple environments. The
-python-openstack client has its own config file to accomplish the same thing.</p>
-<div class="section" id="set-up-your-python-virutal-environment">
-<h2>Set up your python virutal environment<a class="headerlink" href="#set-up-your-python-virutal-environment" title="Permalink to this headline">¶</a></h2>
-<p>Before connecting, we will need all of the openstack client tools.  You do NOT
-want to go down the road of using the OS provided python modules or things will
-eventually break.  Its just easier to deal with a dedicated virtualenv just for
-python-openstack client use. The next time you go to update your workstation,
-this is one less thing you will need to worry about(mostly).</p>
-<div class="section" id="install-the-python-virtuenv-package">
-<h3>Install the python virtuenv package<a class="headerlink" href="#install-the-python-virtuenv-package" title="Permalink to this headline">¶</a></h3>
+<p>This page is just for python-openstackclient configuration.  The more
+traditional way was to source environment files and use separate clients
+for each service.  You would have to use something like supernova to manage
+multiple environments. The python-openstack client has its own config file
+to accomplish the same thing.</p>
+<div class="section" id="set-up-your-python-virtual-environment">
+<h2>Set up your python virtual environment<a class="headerlink" href="#set-up-your-python-virtual-environment" title="Permalink to this headline">¶</a></h2>
+<p>Before connecting, we will need all of the openstack client tools installed.
+You do NOT want to go down the road of using the OS provided python modules
+or things will eventually break.  Its just easier to deal with a dedicated
+virtualenv just for python-openstack client use.  Its just one less thing
+to worry about the next time you update your workstation.</p>
+<div class="section" id="install-the-python-virtualenv-package">
+<h3>Install the python virtualenv package<a class="headerlink" href="#install-the-python-virtualenv-package" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="ubuntu-debian">
 <h4>Ubuntu/Debian<a class="headerlink" href="#ubuntu-debian" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-sh"><div class="highlight"><pre><span></span>apt-get update
@@ -291,9 +293,16 @@ commands.</p>
           <li class="nav-item nav-item-1"><a href="index.html" >Openstack Related Documentation</a> &#187;</li> 
       </ul>
     </div>
-    <div class="footer" role="contentinfo">
-        &#169; Copyright 2017, Shannon Mitchell.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
-    </div>
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
   </body>
 </html>

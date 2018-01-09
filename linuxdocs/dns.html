@@ -1,0 +1,223 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Linux and DNS &#8212; MerlinTechs</title>
+    <link rel="stylesheet" href="../_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Setting up a DNS Server" href="dns-server.html" />
+    <link rel="prev" title="Linux Related Documentation" href="index.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="dns-server.html" title="Setting up a DNS Server"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Linux Related Documentation"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MerlinTechs</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Linux Related Documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/monkey_logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Linux and DNS</a><ul>
+<li><a class="reference internal" href="#what-is-dns">What is DNS</a><ul>
+<li><a class="reference internal" href="#important-info">Important Info</a></li>
+<li><a class="reference internal" href="#common-record-types">Common Record Types</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#the-communication-path-for-a-dns-query-in-linux">The Communication Path for a DNS query in Linux</a></li>
+<li><a class="reference internal" href="#linux-dns-tools">Linux DNS Tools</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Linux Related Documentation</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="dns-server.html"
+                        title="next chapter">Setting up a DNS Server</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/linuxdocs/dns.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="linux-and-dns">
+<h1>Linux and DNS<a class="headerlink" href="#linux-and-dns" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-is-dns">
+<h2>What is DNS<a class="headerlink" href="#what-is-dns" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>Long Answer</strong>: <a class="reference external" href="https://en.wikipedia.org/wiki/Domain_Name_System">https://en.wikipedia.org/wiki/Domain_Name_System</a></li>
+<li><strong>Short Answer</strong>: Service(s) that holds maps for domain names(www.yourcrappysite.com) to/from ip addresses(192.168.1.1).</li>
+</ul>
+<div class="section" id="important-info">
+<h3>Important Info<a class="headerlink" href="#important-info" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>DNS servers are distributed and hierarchical.</li>
+<li>fqdn is the Fully Qualified Domain Name(www.someothersite.com)</li>
+<li>At the top of the tree you have the ‘root’ dns servers(<a class="reference external" href="https://en.wikipedia.org/wiki/DNS_root_zone">https://en.wikipedia.org/wiki/DNS_root_zone</a>)</li>
+<li>root dns servers handle queries for the last part of the fqdn(.com, .org…)</li>
+<li>When you buy a domain from a domain name registrar, you provide at least 2 ips for your dns servers.</li>
+<li>NS or special glue records for your new domain are set up in the root servers which point your domain to the registrar’s dns servers(usually).</li>
+<li>The registrar’s dns servers are usually configure via NS or glue records to point your domain to the ip addresses provided during registration.</li>
+<li>Your dns servers and are now authoritative for your new domain(responsible for replying to queries for this domain).</li>
+<li>You can also delegate subdomains downstream of your parent domains to other dns servers using NS or glue records.</li>
+<li>Forwarders(upstream domain server ips) are configured on your dns server that are queried when your domain server isn’t authoritative for a requested domain or subdomains.</li>
+</ul>
+</div>
+<div class="section" id="common-record-types">
+<h3>Common Record Types<a class="headerlink" href="#common-record-types" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>A</strong>: Maps domain name to an ipv4 address</li>
+<li><strong>AAAA</strong>: Maps domain name to an ipv6 address</li>
+<li><strong>CNAME</strong>: Maps domain name to domain name for aliases</li>
+<li><strong>MX</strong>: Points to mail servers for a domain.  Can have multiple records with a numeric weight to determine the order that is uses by email clients when contacting email servers.</li>
+<li><strong>NS</strong>: Used to point to authoritative name servers to deletage a subdomain.</li>
+<li><strong>SOA</strong>: Provide authoritave domain info such as primary name server, email and some times related to dns caching.</li>
+<li><strong>PTR</strong>: Revers map from ip address to domain name.</li>
+<li><strong>SRV</strong>: Used by software to locate servers for a specific service.</li>
+<li>See <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">https://en.wikipedia.org/wiki/List_of_DNS_record_types</a> for more.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="the-communication-path-for-a-dns-query-in-linux">
+<h2>The Communication Path for a DNS query in Linux<a class="headerlink" href="#the-communication-path-for-a-dns-query-in-linux" title="Permalink to this headline">¶</a></h2>
+<p>Here we want to provide a general idea of what happens when you access a service on a linux device using a domain name.</p>
+<ol class="arabic simple">
+<li>Applications tie into the linux shared libnss_dss library when issuing a dns query. (man nsswitch.conf)</li>
+<li>The library checks the /etc/nsswitch.conf for a ‘host’ config entry when a dns query is ran.</li>
+</ol>
+<div class="highlight-sh"><div class="highlight"><pre><span></span><span class="c1"># grep hosts /etc/nsswitch.conf</span>
+hosts:          files dns
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>Queries are ran from left to right 1st match wins.  ‘files’ is checked first and ‘dns’ second.</li>
+<li>For the 1st check(‘files’), the /etc/hosts file is used for ‘ip address’ mappings. (man hosts)</li>
+</ol>
+<div class="highlight-sh"><div class="highlight"><pre><span></span><span class="c1"># cat /etc/hosts</span>
+</pre></div>
+</div>
+<div class="highlight-none"><div class="highlight"><pre><span></span>127.0.0.1 localhost
+
+# The following lines are desirable for IPv6 capable hosts
+::1 ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts
+
+192.168.1.1  www.somerandomentry.com
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li>For the 2nd check the resolver libraries are used and the /etc/resolv.conf is checked for dns servers to query against. (man resolv.conf, man resolver, man host.conf)</li>
+</ol>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>cat /etc/resolv.conf
+</pre></div>
+</div>
+<div class="highlight-none"><div class="highlight"><pre><span></span>search somedomain.net
+nameserver 192.168.1.254
+nameserver 192.168.1.253
+</pre></div>
+</div>
+<ul class="simple">
+<li>If fqdn isn’t provided, ‘search’ is used for the query. (man resolv.conf)</li>
+<li>A query against 192.168.1.254 is ran for the domain=&gt;ip mapping until a default timeout of 30 seconds is hit..</li>
+<li>If the first query times out when contacting the dns server, the second 192.168.1.253 address is queried.</li>
+<li>If the dns server 192.168.1.253 is authoritative for the domain queried, it returns the results from that server.</li>
+<li>If the domain queried is a subdomain of the domain hosted by 192.168.1.253, it may use the NS or glue records to trigger a query to the authortative servers for it.</li>
+<li>If the domain queried isn’t hosted by your servers, the configured forwarder addresses are used to continue the query upstream possibly all the way up to the root servers and back down to the proper authoritative server.</li>
+</ul>
+</div>
+<div class="section" id="linux-dns-tools">
+<h2>Linux DNS Tools<a class="headerlink" href="#linux-dns-tools" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="dns-server.html" title="Setting up a DNS Server"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Linux Related Documentation"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MerlinTechs</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Linux Related Documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Shannon Mitchell.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+    </div>
+  </body>
+</html>
